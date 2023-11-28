@@ -1,0 +1,2 @@
+# datastructure
+purpose of practice 
