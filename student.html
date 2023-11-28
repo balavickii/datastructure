@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        th, td {
+                padding-top: 10px;
+                padding-bottom: 20px;
+                padding-left: 30px;
+                padding-right: 40px;
+                }
+                button{
+                    padding-left: 30%;
+                    padding-right: 30%;
+                    padding-bottom: 2%;
+                    background-color: rgb(25, 255, 255);
+                }
+                h1{
+                    color: red;
+                }
+                table
+                {
+                    background-color: rgb(211, 211, 225);
+                    justify-content: center;
+                }
+    </style>
+   <center> <h1>STUDENT FORM</h1></center>
+   <center> <table border="2">
+         <tr>
+            <th>Name :</th><td><input type="text" id="name"></td>
+         </tr>
+         <tr>
+            <th>Age :</th><td><input type="text" id="age"></td>
+         </tr>
+         <tr>
+            <th>Gender</th><td><input type="radio" value="Male" id="m" name="genter"><label for="">Male</label><input id="f" name="genter" type="radio" value="Female"><label for="">Female</label></td>
+         </tr><tr>
+            <th>Course :</th><td><input type="text" id="course"></td>
+         </tr>
+         <tr>
+            <th>E-mail :</th><td><input type="text" id="mail"></td>
+         </tr>
+         <tr> <td colspan="2" ><center><button id="save" onclick="update()">save</button></center></td></tr>
+    </table></center>
+   <center> <table border="1" id="t1">
+       <tr> <th>Name</th><th>Age</th><th>course</th><th>Gender</th><th>E-mail</th><th>Action</th></tr>
+       <!-- <tr id="k"><td id="n1"></td><td id="a1"></td><td id="c1"></td><td id="g1"></td><td id="e1"></td><td id="a1"></td></tr> -->
+    </table></center>
+   
+</body>
+<script>
+         var name=document.getElementById("name")
+         var age=document.getElementById("age")
+         var male=document.getElementById("m")
+         var female=document.getElementById("f")
+         let Course=document.getElementById("course")
+         let mail=document.getElementById("mail")
+         let ite1=document.getElementById('ite1')
+         let list=[]
+          
+
+        function update()
+        {
+
+           list[0]=name.value
+           list[1]=age.value
+           list[2]=Course.value
+           list[3]=male.value
+           list[4]=mail.value
+       //    console.log(list)
+           //tabledata=[]
+          for(var i=0;i<=list.length;i++)
+          {
+            
+             let tabledata=document.createElement("td")
+             tabledata.textContent=list[i]
+             t1.append(tabledata)
+             if((list.length)==i)
+             {
+               tabledata.innerHTML="<button onclick='dele(event)'>delete</button>"
+               break;
+             }
+            
+          } 
+           }
+          
+
+           function dele(event)
+        {
+          event.target.parentElement.remove()
+        }
+          
+
+         
+</script>
+</html>

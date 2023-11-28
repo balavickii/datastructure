@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn" onclick="add()">add</button>
+    <div id="h"></div>
+</body>
+<script>
+    let h=document.getElementById('h')
+    function add(){
+       //creating a element 
+       let listitem= document.createElement("h1")
+
+        listitem.textContent="hello"
+        h.append(listitem)
+      
+       
+    }
+    
+</script>
+</html>
